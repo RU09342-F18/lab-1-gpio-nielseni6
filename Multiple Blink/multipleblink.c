@@ -2,7 +2,7 @@
 
 
 /**
- * blink.c
+ * multipleblink.c
  */
 void main(void)
 {
