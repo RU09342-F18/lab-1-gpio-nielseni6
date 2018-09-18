@@ -2,7 +2,7 @@
 
 
 /**
- * multipleblink.c
+ * blink.c
  */
 void main(void)
 {
@@ -14,20 +14,24 @@ void main(void)
 
     volatile unsigned int i;                // volatile to prevent optimization
     int k = 0;                              // blink speed state: 0 - off, 1 - slow, 2 - medium, 3 - fast
-    int j = 0;                              // counter to set blink interval - waits to reach x
+    int g = 0;                              // counter to set green led blink interval - waits to reach x
+    int r = 0;                              // counter to set red led blink interval - waits to reach x/2
     int x = 8;                              // blink interval - the higher the slower the blink
     while(1)
     {
-        if (j == (x/2)){                    // waits for j to reach x/2 (blink delay)
+        if (r >= (x/2)){                    // waits for g to reach x/2 (blink delay)
             if (k != 0) P1OUT ^= BIT6;      // toggle P1.6(LED)
             if (k == 0) P1OUT &= ~BIT6;     // turn off P1.6(LED)
+            r = 0;                          // resets r for next blink
+        } else {
+            r++;                            // counts up for r to be used for blink delay
         }
-        if (j >= x){                        // waits for j to reach x (blink delay)
+        if (g >= x){                        // waits for g to reach x (blink delay)
             if (k != 0) P1OUT ^= 0x01;      // toggle P1.0(LED)
             if (k == 0) P1OUT &= ~BIT0;     // turn off P1.0(LED)
-            j = 0;                          // resets j for next blink
+            g = 0;                          // resets g for next blink
         } else {
-            j++;                            // counts up for j to be used for blink delay
+            g++;                            // counts up for g to be used for blink delay
         }
         if (k > 3) k = 0;                   // resets k to 0 once highest state is reached
         if (k == 1) x = 32;                 // set delay time slow
