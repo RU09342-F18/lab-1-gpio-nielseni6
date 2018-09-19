@@ -2,16 +2,16 @@
 
 
 /**
- * buttonblink.c
+ * buttonblinkG2.c
  */
-void main(void)
+void buttonblinkG2(void)
 {
-	WDTCTL = WDTPW | WDTHOLD;		        // stop watchdog timer
-	P1DIR |= 0x01;					        // configure P1.0 as output
+	WDTCTL = WDTPW | WDTHOLD;	        // stop watchdog timer
+	P1DIR |= 0x01;			  	// configure P1.0 as output
 	P1DIR &= ~0x08;                         // configure P1.3 as input
 
 
-	volatile unsigned int i;		        // volatile to prevent optimization
+	volatile unsigned int i;		// volatile to prevent optimization
 	int k = 0;                              // blink speed state: 0 - off, 1 - slow, 2 - medium, 3 - fast
 	int j = 0;                              // counter to set blink interval - waits to reach x
 	int x = 8;                              // blink interval - the higher the slower the blink
@@ -32,6 +32,6 @@ void main(void)
 	        k++;                            // if button is pressed the blink interval goes up
 	        while (!(P1IN & BIT3));         // waits until button is leg go before continuing
 	    }
-		for(i=(1000); i>0; i--);            // delay
+		for(i=(1000); i>0; i--);        // delay
 	}
 }
