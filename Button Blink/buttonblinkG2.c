@@ -18,8 +18,8 @@ void buttonblinkG2(void)
 	while(1)				// infinite loop
 	{
 	    if (j >= x){                        // waits for j to reach x (blink delay)
-	    if (k != 0) P1OUT ^= 0x01;          // toggle P1.0(LED)
-	    if (k == 0) P1OUT = 0x00;           // turn off P1.0(LED)
+	    if (k != 0) P1OUT ^= 0x01;          // toggle P1.0(LED) unless k is in off state
+	    if (k == 0) P1OUT = 0x00;           // turn off P1.0(LED) if k is in off state
 	    j = 0;                              // resets j for next blink
 	    } else {
 	        j++;                            // increments j to be used as a blink delay counter
