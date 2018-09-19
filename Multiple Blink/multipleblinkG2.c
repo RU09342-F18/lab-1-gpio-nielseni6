@@ -2,9 +2,9 @@
 
 
 /**
- * multipleblink.c
+ * multipleblinkG2.c
  */
-void main(void)
+void multipleblinkG2(void)
 {
     WDTCTL = WDTPW | WDTHOLD;               // stop watchdog timer
     P1DIR |= 0x01;                          // configure P1.0 as output
