@@ -8,7 +8,6 @@ void main(void)
 {
     WDTCTL = WDTPW | WDTHOLD;               // stop watchdog timer
     P1DIR |= 0x01;                          // configure P1.0 as output
-    P1DIR &= ~0x08;                         // configure P1.3 as input
 
     volatile unsigned int i;                // volatile to prevent optimization
     int g = 0;                              // counter to set green led blink interval - waits to reach x
