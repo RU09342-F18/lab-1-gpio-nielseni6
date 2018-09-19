@@ -22,7 +22,7 @@ void buttonblinkG2(void)
 	    if (k == 0) P1OUT = 0x00;           // turn off P1.0(LED)
 	    j = 0;                              // resets j for next blink
 	    } else {
-	        j++;                            // counts up for j to be used for blink delay
+	        j++;                            // increments j to be used as a blink delay counter
 	    }
 	    if (k > 3) k = 0;                   // resets k to 0 once highest state is reached
 	    if (k == 1) x = 32;                 // set delay time slow
