@@ -15,7 +15,7 @@ void buttonblinkG2(void)
 	int k = 0;                              // blink speed state: 0 - off, 1 - slow, 2 - medium, 3 - fast
 	int j = 0;                              // counter to set blink interval - waits to reach x
 	int x = 8;                              // blink interval - the higher the slower the blink
-	while(1)
+	while(1)				// infinite loop
 	{
 	    if (j >= x){                        // waits for j to reach x (blink delay)
 	    if (k != 0) P1OUT ^= 0x01;          // toggle P1.0(LED)
