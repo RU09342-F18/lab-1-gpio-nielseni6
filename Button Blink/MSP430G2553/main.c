@@ -1,10 +1,6 @@
 #include <msp430.h>				
 
-
-/**
- * buttonblinkG2.c
- */
-void buttonblinkG2(void)
+void main(void)
 {
 	WDTCTL = WDTPW | WDTHOLD;	        // stop watchdog timer
 	P1DIR |= 0x01;			  	// configure P1.0 as output
