@@ -1,7 +1,7 @@
 # Button Blink
 ## Microcontrollers Used
 * MSP430G2553
-* TBD
+* MSP430FR2311
 
 ## Functionality
 
