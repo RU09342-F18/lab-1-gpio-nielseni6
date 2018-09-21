@@ -5,7 +5,7 @@
 
 ## Functionality
 
-This program blinks one LED at a rate of about 3* Hz. The blink is symmetrical so the LED spends an equal amount of time on and off. The speed of the LED blink is determined by the value of the variable x, which is set at the beginning of the program. How this function operates will be explained in the explination section
+This program blinks two LEDs at different rates. The blink is symmetrical so the LED spends an equal amount of time on and off. The speed of the red LED is twice as fast as the green LED. The speed of the LED blink is determined by the value of the variable x, which is set at the beginning of the program. How this function operates will be explained in the explination section
 
 ## Explination
 
