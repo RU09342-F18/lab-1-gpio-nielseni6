@@ -6,8 +6,8 @@
  */
 void multipleblinkF5529(void)
 {
-	WDTCTL = WDTPW | WDTHOLD;		// stop watchdog timer
-	P1DIR |= 0x01;					// configure P1.0 as output
+    WDTCTL = WDTPW | WDTHOLD;	    // stop watchdog timer
+    P1DIR |= 0x01;			    // configure P1.0 as output
     P4DIR |= BIT7;                          // configure P4.7 as output
 
     volatile unsigned int i;                // volatile to prevent optimization
