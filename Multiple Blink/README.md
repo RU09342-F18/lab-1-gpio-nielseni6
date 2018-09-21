@@ -1,22 +1,18 @@
-# Multiple Blink
-Now that we have blinked at least 1 LED, what about blinking multiple LEDS at the same time? The minimum that you need to develop is blinking at least two LEDs at two different rates. Although I am not going to give you a speed, you should probably pick a rate which is visible to a standard human. I really hope that you take this further and perform some of the extra work for this part of the lab exercise.
-
-
-# YOU NEED TO CREATE THE FOLLOWING FOLDERS
+# Simple Blink
+## Microcontrollers Used
 * MSP430G2553
-* MSP(FILL IN WITH WHAT YOU ARE USING)
+* MSP430F5529LP
 
-## README
-Remember to replace this README with your README once you are ready to submit. I would recommend either making a copy of this file or taking a screen shot. There might be a copy of all of these README's in a folder on the top level depending on the exercise.
+## Functionality
 
-## Extra Work
-When you take a look at the development boards, you are limited to what is built into the platform.
+This program blinks one LED at a rate of about 3* Hz. The blink is symmetrical so the LED spends an equal amount of time on and off. The speed of the LED blink is determined by the value of the variable x, which is set at the beginning of the program. How this function operates will be explained in the explination section
 
-### Even More LEDs
-Since up to this point you should have hopefully noticed that you are simply just controlling each pin on your processor. So... what is keeping you from putting an LED on each pin? Can you actually control the speed of each of these LEDs?
+## Explination
 
-### Patterned Lights
-If you can control a ton of LEDs, what is keeping you from having a little fun? Why not try and make something like a moving face or other moving object in lights. *CAUTION* I would only do this if you have finished the rest of the lab.
+This program operates by first stopping the watchdog timer. This is disabled since it is not used in this program and it could interfere with the functionality. After this P1.0 is set to 1, which means it is being used as an output. Next the integer variables i, g, and x are initiated. i is used for the delay for loop. g is used to count the cycles since the last LED change, and x is the number of cycles of g that will be counted before the LED is changed again. After these variables are initiated, the rest of the code is in an infinitely repeating while loop, so that it will keep repeating and blinking the LED. The main part of the program is an if statement that will alternate the value of P1.0 (LED) and reset the value of g to 0 if g >= x. If this is not true g is incremented up by 1. After this there is a for loop which is used to delay and then the program returns to the beginning of the while loop to check the if statement again.
 
-### UART Pattern Control
-If you have been using UART, could you set which LEDs are on or off based off some UART command? Would you want to send an Array over UART such as [1 0 1 0] or would you want to send a byte that corresponds to the status? Can you not only say which LEDs are on, but also tell them to blink at a particular rate if they were on (so LED1 Blink every 100ms)?
+
+
+
+
+*Number subject to change
