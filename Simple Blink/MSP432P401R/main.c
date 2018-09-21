@@ -1,10 +1,6 @@
 #include "msp.h"
 
-
-/**
- * simpleblinkMSP432.c
- */
-void simpleblinkMSP432(void)
+void main(void)
 {
 	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;	// stop watchdog timer
     P1DIR |= 0x01;                          // configure P1.0 as output
