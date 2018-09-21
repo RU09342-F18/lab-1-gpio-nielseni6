@@ -1,17 +1,10 @@
 # Off Board Blink
-Now that we have the whole blinking LED out of the way, why don't we try making things a little more convenient by taking the G2553 off the development board and into a breadboard. In addition to the software, your README needs to also contain a picture of your circuit with at least 2 LEDs blinking all on a breadboard and without a development board. This means that you will need:
-* Proper power being supplied to the processor
-* Proper Reset Circuitry
-* Proper Bypass and Bulk Capacitors as needed
 
-Please be advised that you can easily damage or destroy one of the pins on the MSP430 by applying the wrong voltage or attempting to draw too much current from it. Really check your design before you power up to ensure you do not need request another processor.
+### The video of this circuit operating is named 20180921_082531.mp4 and can be found in the MSP430G2553 folder
 
-## "Do I need to use a power supply to power this thing?"
-In the beginning part of the exercise, I would say that you can use the 5V/3.3V rails built into the development board by running wires. However, I would recommend looking into how to supply the processor from something like a battery or the power supply. You might want to look into different types of regulators. For example, your circuits may be powered off of a battery that is only 1.8V, or on a system that can only supply you with 13V.
+## Functionality
+This part of this lab involved transferring the processor to a breadboard and wiring the processor to run a program that blinks two LEDs. In order to do this three things needed to be done. The three things that were done were proper power being supplied to the processor, proper reset circuitry and proper bypass and bulk capacitors. When the power turns on the program starts and the LEDs begin blinking. The red LED blinks at twice the rate the green LED blinks. When the button is pressed the processor resets.
 
-## "What about the buttons and resistors and LEDS?"
-You remember those parts bins in the back of the teaching labs? They contain most everything you will need to do this portion of the lab. You should really make a effort to try and replicate what is on those development boards on the breadboard so you can begin to see what is needed to design with a microcontroller. Mess around with different color LEDS and see if they behave the same as the simple Red LEDs.
+## Explination
 
-# YOU NEED TO CREATE THE FOLLOWING FOLDER
-* MSP430G2553
-
+This processor works the same on a breadboard as it does on the development board. The only difference being that the ports need to be wired by hand. Wiring this up is pretty simple however, as all that is needed to run the program on this board is power ground and reset. The power is hooked up at the top left most pin of the processor to a 3.3V power supply and ground is connected to the top right most pin. The reset button and logic are connected to the fifth pin from the top on the right. That pin is connected to a capacitor that goes to ground, a 4.7kΩ resistor that connects to power and a button that connects to ground. When the button is pressed the reset pin is set to zero and the processor resets. Finally, there are two LEDs connected to P1. There is a green LED connected to P1.0, which is the second pin to the top on the left and there is a red LED that is connected to P1.6 which is the fourth pin from the bottom on the right. This can be seen in the video in the MSP430G2553 folder.
