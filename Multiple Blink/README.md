@@ -1,7 +1,6 @@
 # Simple Blink
 ## Microcontroller Used
 * MSP430G2553
-* MSP430F5529LP
 
 ## Functionality
 
