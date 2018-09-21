@@ -15,11 +15,3 @@ You remember those parts bins in the back of the teaching labs? They contain mos
 # YOU NEED TO CREATE THE FOLLOWING FOLDER
 * MSP430G2553
 
-## Extra Work
-Once you get to this point, you are pretty much set in terms of GPIO mastery getting the LEDs to blink, but there are some more exploratory tasks that you can do.
-
-### Off-Board Programming
-Do we need to keep re-inserting the MSP into the development board to program it, or is there some way to keep the chip in the circuit? For starters, try to connect the header which connects the debugger and emulator (that parts that is really dense in parts) to your chip on your board. You will need to look at the datasheets for the MSP430G2553 and the Launchpad itself to see where and how to connect to the programmer. Next, you should really look at using the JTAG connector that is also available on your board.
-
-### UART/Button Control
-Remember that stuff you did a few parts ago? Can you actually get all of that working again off of the development board? Can you control which lights are on, the speed they blink at, etc.
